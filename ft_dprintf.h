@@ -1,26 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_dprintf.h                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mamatter <mamatter@student.42angouleme.fr> +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/02 08:58:02 by mamatter          #+#    #+#             */
+/*   Updated: 2026/11/04 20:12:06 by mamatter         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_DPRINTF_H
 # define FT_DPRINTF_H
 
+/* Inclusion of necessary libraries */
 # include <stdarg.h>
 # include <unistd.h>
 
-/* Fonctions de conversion et d'affichage (Utilitaires) */
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_puthexa_fd(unsigned long long n, int fd, char *base);
-void	ft_putptr_fd(void *ptr, int fd);
-int		ft_countargs(const char *format, va_list *args);
-void	ft_putunbr_fd(unsigned int n, int fd);
+/* Constants */
+# define HEX_LOW "0123456789abcdef"
+# define HEX_UP "0123456789ABCDEF"
 
-/* Fonctions de comptage */
-int		ft_ullnbrlen(unsigned long long nb);
-int		ft_nbrlen(int nb);
-int		ft_unbrlen(unsigned int nb);
-size_t	ft_strlen(char *s);
-int		ft_ptrlen(void *ptr);
+/* Main function */
+int		ft_dprintf(int fd, const char *format, ...);
 
-/* Fonction principale */
-int		ft_dprintf(const char *format, ...);
+/* Utility functions */
+int		ft_putchar_fd(char c, int fd);
+int		ft_putstr_fd(char *s, int fd);
+int		ft_putnbr_fd(int n, int fd);
+int		ft_putunbr_fd(unsigned int n, int fd);
+int		ft_puthexa_fd(unsigned long n, int fd, char *base);
+int		ft_putptr_fd(void *p, int fd);
+size_t	ft_strlen(const char *s);
 
 #endif

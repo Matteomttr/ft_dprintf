@@ -1,16 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putunbr_fd.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mamatter <mamatter@student.42angouleme.fr> +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/03 10:50:48 by mamatter          #+#    #+#             */
+/*   Updated: 2026/11/04 20:11:42 by mamatter         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../ft_dprintf.h"
 
-void	ft_putunbr_fd(unsigned int n, int fd)
+int	ft_putunbr_fd(unsigned int n, int fd)
 {
+	int	count;
+
 	if (fd < 0)
-		return ;
-	if (n <= 9)
-	{
-		ft_putchar_fd(n + '0', fd);
-	}
-	else
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd(n % 10 + '0', fd);
-	}
+		return (0);
+	count = 0;
+	if (n > 9)
+		count += ft_putunbr_fd(n / 10, fd);
+	count += ft_putchar_fd(n % 10 + '0', fd);
+	return (count);
 }
