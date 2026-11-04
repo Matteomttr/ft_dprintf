@@ -10,8 +10,8 @@ AR= ar
 ARFLAGS= rsc
 
 # Source and object directories
-SRC_DIR= SRC
-OBJ_DIR= OBJ
+SRC_DIR= src
+OBJ_DIR= obj
 
 # List of src files
 SRCS=	$(SRC_DIR)/ft_printf.c \
