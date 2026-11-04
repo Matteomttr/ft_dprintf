@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_dprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamatter <mamatter@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 18:48:00 by mamatter          #+#    #+#             */
-/*   Updated: 2026/11/04 20:02:00 by mamatter         ###   ########.fr       */
+/*   Updated: 2026/11/04 20:47:42 by mamatter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	loop(char c, va_list *args, int fd)
 	if (c == '%')
 		count += ft_putchar_fd('%', fd);
 	else
-		count += ft_putchar_fd(c, fd);
+		count += ft_putchar_fd('%', 1) + ft_putchar_fd(c, 1);
 	return (count);
 }
 
