@@ -6,12 +6,13 @@
 /*   By: mamatter <mamatter@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/01 12:24:45 by mamatter          #+#    #+#             */
-/*   Updated: 2026/11/04 20:05:55 by mamatter         ###   ########.fr       */
+/*   Updated: 2026/11/05 10:18:08 by mamatter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_dprintf.h"
 
+/* Writes a string to a file descriptor. */
 int	ft_putstr_fd(char *s, int fd)
 {
 	int	i;

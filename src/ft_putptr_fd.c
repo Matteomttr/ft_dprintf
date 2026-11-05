@@ -6,12 +6,13 @@
 /*   By: mamatter <mamatter@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/02 09:21:59 by mamatter          #+#    #+#             */
-/*   Updated: 2026/11/04 20:11:58 by mamatter         ###   ########.fr       */
+/*   Updated: 2026/11/05 10:18:18 by mamatter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_dprintf.h"
 
+/* Writes an pointer to a file descriptor. */
 int	ft_putptr_fd(void *p, int fd)
 {
 	int	count;

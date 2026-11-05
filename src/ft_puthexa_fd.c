@@ -6,12 +6,13 @@
 /*   By: mamatter <mamatter@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/01 13:29:42 by mamatter          #+#    #+#             */
-/*   Updated: 2026/11/04 20:11:52 by mamatter         ###   ########.fr       */
+/*   Updated: 2026/11/05 10:17:41 by mamatter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_dprintf.h"
 
+/* Writes a hexadecimal to a file descriptor. */
 int	ft_puthexa_fd(unsigned long n, int fd, char *base)
 {
 	int	count;
