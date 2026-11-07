@@ -6,7 +6,7 @@
 /*   By: mamatter <mamatter@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 18:48:00 by mamatter          #+#    #+#             */
-/*   Updated: 2026/11/04 20:47:42 by mamatter         ###   ########.fr       */
+/*   Updated: 2026/11/07 18:19:42 by mamatter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,22 @@ static int	loop(char c, va_list *args, int fd)
 	count = 0;
 	if (c == 'c')
 		count += ft_putchar_fd(va_arg(*args, int), fd);
-	if (c == 's')
+	else if (c == 's')
 		count += ft_putstr_fd(va_arg(*args, char *), fd);
-	if (c == 'p')
+	else if (c == 'p')
 		count += ft_putptr_fd(va_arg(*args, void *), fd);
-	if (c == 'd' || c == 'i')
+	else if (c == 'd' || c == 'i')
 		count += ft_putnbr_fd(va_arg(*args, int), fd);
-	if (c == 'u')
+	else if (c == 'u')
 		count += ft_putunbr_fd(va_arg(*args, unsigned int), fd);
-	if (c == 'x')
+	else if (c == 'x')
 		count += ft_puthexa_fd(va_arg(*args, unsigned int), fd, HEX_LOW);
-	if (c == 'X')
+	else if (c == 'X')
 		count += ft_puthexa_fd(va_arg(*args, unsigned int), fd, HEX_UP);
-	if (c == '%')
+	else if (c == '%')
 		count += ft_putchar_fd('%', fd);
 	else
-		count += ft_putchar_fd('%', 1) + ft_putchar_fd(c, 1);
+		count += ft_putchar_fd('%', fd) + ft_putchar_fd(c, fd);
 	return (count);
 }
 
