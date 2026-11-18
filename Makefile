@@ -38,20 +38,23 @@ all: $(NAME)
 
 # Compile everything into an archive
 $(NAME): $(OBJS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
+	@$(AR) $(ARFLAGS) $(NAME) $(OBJS)
+	@echo "Archive created successfully!"
 
 # Compile src files into obj files
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 # Clean up obj files
 clean:
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
+	@echo "Object successfully deleted!"
 
 # Clean up obj files and archive
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "Archive successfully deleted!"
 
 # Rebuild everything
 re: fclean all

@@ -6,14 +6,14 @@
 /*   By: mamatter <mamatter@student.42angouleme.fr> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/04 18:48:00 by mamatter          #+#    #+#             */
-/*   Updated: 2026/11/07 18:19:42 by mamatter         ###   ########.fr       */
+/*   Updated: 2026/11/18 10:25:15 by mamatter         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_dprintf.h"
 
 /* Loops through the format string and prints the corresponding argument */
-static int	loop(char c, va_list *args, int fd)
+static int	ft_loop(char c, va_list *args, int fd)
 {
 	int	count;
 
@@ -46,7 +46,7 @@ int	ft_dprintf(int fd, const char *format, ...)
 	int		i;
 	int		count;
 
-	if (!format)
+	if (!format && fd < 0)
 		return (-1);
 	va_start(args, format);
 	i = 0;
@@ -56,7 +56,7 @@ int	ft_dprintf(int fd, const char *format, ...)
 		if (format[i] == '%' && format[i + 1])
 		{
 			i++;
-			count += loop(format[i], &args, fd);
+			count += ft_loop(format[i], &args, fd);
 		}
 		else
 			count += ft_putchar_fd(format[i], fd);
