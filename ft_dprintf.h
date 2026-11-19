@@ -1,14 +1,12 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_dprintf.h                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mamatter <mamatter@student.42angouleme.fr> +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/11/02 08:58:02 by mamatter          #+#    #+#             */
-/*   Updated: 2026/11/04 20:12:06 by mamatter         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/* =====================================================
+ * File        : ft_dprintf.h
+ * Author      : Matteomttr
+ * Date        : 2026
+ * Description : Header for ft_dprintf
+ *
+ * Copyright (c) 2026 Matteomttr. All rights reserved.
+ * ===================================================== */
+
 
 #ifndef FT_DPRINTF_H
 # define FT_DPRINTF_H

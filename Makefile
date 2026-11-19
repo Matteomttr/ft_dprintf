@@ -12,26 +12,27 @@ ARFLAGS= rsc
 # Source and object directories
 SRC_DIR= src
 OBJ_DIR= obj
+UTILS_DIR= utils
 
 # List of src files
 SRCS=	$(SRC_DIR)/ft_dprintf.c \
-		$(SRC_DIR)/ft_putchar_fd.c \
-		$(SRC_DIR)/ft_puthexa_fd.c \
-		$(SRC_DIR)/ft_putnbr_fd.c \
-		$(SRC_DIR)/ft_putstr_fd.c \
-		$(SRC_DIR)/ft_putptr_fd.c \
-		$(SRC_DIR)/ft_strlen.c \
-		$(SRC_DIR)/ft_putunbr_fd.c \
+		$(SRC_DIR)/$(UTILS_DIR)/ft_putchar_fd.c \
+		$(SRC_DIR)/$(UTILS_DIR)/ft_puthexa_fd.c \
+		$(SRC_DIR)/$(UTILS_DIR)/ft_putnbr_fd.c \
+		$(SRC_DIR)/$(UTILS_DIR)/ft_putstr_fd.c \
+		$(SRC_DIR)/$(UTILS_DIR)/ft_putptr_fd.c \
+		$(SRC_DIR)/$(UTILS_DIR)/ft_strlen.c \
+		$(SRC_DIR)/$(UTILS_DIR)/ft_putunbr_fd.c \
 
 # List of obj files
 OBJS=	$(OBJ_DIR)/ft_dprintf.o \
-		$(OBJ_DIR)/ft_putchar_fd.o \
-		$(OBJ_DIR)/ft_puthexa_fd.o \
-		$(OBJ_DIR)/ft_putnbr_fd.o \
-		$(OBJ_DIR)/ft_putstr_fd.o \
-		$(OBJ_DIR)/ft_putptr_fd.o \
-		$(OBJ_DIR)/ft_strlen.o \
-		$(OBJ_DIR)/ft_putunbr_fd.o \
+		$(OBJ_DIR)/$(UTILS_DIR)/ft_putchar_fd.o \
+		$(OBJ_DIR)/$(UTILS_DIR)/ft_puthexa_fd.o \
+		$(OBJ_DIR)/$(UTILS_DIR)/ft_putnbr_fd.o \
+		$(OBJ_DIR)/$(UTILS_DIR)/ft_putstr_fd.o \
+		$(OBJ_DIR)/$(UTILS_DIR)/ft_putptr_fd.o \
+		$(OBJ_DIR)/$(UTILS_DIR)/ft_strlen.o \
+		$(OBJ_DIR)/$(UTILS_DIR)/ft_putunbr_fd.o \
 
 # Compile everything
 all: $(NAME)
@@ -44,6 +45,7 @@ $(NAME): $(OBJS)
 # Compile src files into obj files
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)/$(UTILS_DIR)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 # Clean up obj files
