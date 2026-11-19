@@ -1,5 +1,5 @@
 # The name of the libft archive
-NAME= libftprintf.a
+NAME= libft_dprintf.a
 
 # Compiler + flags for executable
 CC= cc
